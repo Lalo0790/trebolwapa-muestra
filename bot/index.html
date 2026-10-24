@@ -1,53 +1,63 @@
-<!doctype html><html lang="es-MX"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><title>Demo asistente | Trébol Wapa (muestra)</title><style>
-:root{--d:#2f8f5b;--r:#3fae6e;--l:#f4f5f7;--bg:#fdf2f6}*{box-sizing:border-box}html,body{height:100%}
-body{margin:0;font-family:system-ui,Segoe UI,Roboto,sans-serif;background:radial-gradient(circle at 20% 10%,#e3f6ea,transparent 50%),var(--bg);color:#2d2a32}
-.c{background:#ffe066;color:#5c4400;font-size:.68rem;font-weight:700;padding:1px 5px;border-radius:4px;white-space:nowrap}
-.stage{display:flex;align-items:center;justify-content:center;gap:56px;min-height:100%;padding:24px}
-.side{max-width:400px}.side h1{font-size:2.6rem;line-height:1.08;margin:10px 0 14px}.side h1 em{color:var(--r);font-style:normal}.side p{opacity:.8}
-.kick{display:inline-block;background:#3fae6e22;color:#2f8f5b;border:1px solid #3fae6e55;padding:5px 12px;border-radius:30px;font-size:.8rem;font-weight:700}
-.ben{list-style:none;padding:0;margin:22px 0}.ben li{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #f3d3e0;border-radius:14px;padding:11px 14px;margin-bottom:9px}.ben i{font-style:normal;font-size:1.3rem;width:38px;height:38px;display:grid;place-items:center;background:var(--r);border-radius:10px;flex:none}.ben b{display:block}.ben span{font-size:.85rem;opacity:.7}
-.by{font-size:.8rem;opacity:.55}
-.phone{width:390px;height:800px;max-height:calc(100vh - 48px);background:#000;border-radius:46px;padding:12px;box-shadow:0 30px 80px #000a,0 0 0 2px #333 inset;flex:none}
-.scr{height:100%;border-radius:36px;overflow:hidden;display:flex;flex-direction:column;background:#efe9e1}
-.demo{background:#ffe066;color:#3d2e00;font-size:.75rem;font-weight:700;text-align:center;padding:6px 10px;line-height:1.3}.demo small{display:block;font-weight:500;opacity:.8}
-.top{background:var(--d);display:flex;align-items:center;gap:10px;padding:10px 12px}
-.av{width:40px;height:40px;border-radius:50%;background:var(--r);display:grid;place-items:center;flex:none}
-.top b{font-size:.98rem;display:block}.top small{font-size:.75rem;color:#86efac}.top .rs{margin-left:auto;background:#ffffff1a;border:0;color:#fff;font:inherit;font-size:.72rem;padding:6px 10px;border-radius:20px;cursor:pointer}
-.chat{flex:1;overflow-y:auto;padding:14px 10px;background-color:#ece5dc;background-image:radial-gradient(#0000000a 1px,transparent 1px);background-size:14px 14px}
-.day{text-align:center;margin:0 0 10px}.day span{background:#fff;color:#555;font-size:.7rem;padding:4px 10px;border-radius:8px;box-shadow:0 1px 1px #0001}
-.m{max-width:84%;padding:7px 10px 5px;border-radius:12px;margin:4px 0;font-size:.9rem;line-height:1.4;color:#111;box-shadow:0 1px 1px #0002;animation:pop .25s ease;position:relative;word-wrap:break-word}
-.m.b{background:#fff;border-top-left-radius:3px}.m.u{background:#d1fae5;margin-left:auto;border-top-right-radius:3px}
-.t{display:block;text-align:right;font-size:.64rem;color:#777;margin-top:2px}.tk{color:#3b82f6;margin-left:3px}
-@keyframes pop{from{opacity:0;transform:translateY(6px) scale(.97)}to{opacity:1;transform:none}}
-.typing{background:#fff;display:inline-flex;gap:4px;padding:12px 14px;border-radius:12px;border-top-left-radius:3px;margin:4px 0}.typing i{width:7px;height:7px;border-radius:50%;background:#999;animation:bl 1s infinite}.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
-@keyframes bl{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-3px)}}
-.cars{display:flex;gap:8px;overflow-x:auto;margin:6px 0;padding-bottom:4px}.car{flex:none;width:200px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 2px #0002;color:#111;animation:pop .3s}
-.car svg{display:block;width:100%}.car div{padding:8px 10px;font-size:.8rem}.car b{display:block;font-size:.9rem}.car .p{color:var(--r);font-weight:800}
-.card{background:#fff;border-radius:12px;overflow:hidden;max-width:88%;margin:6px 0;box-shadow:0 1px 2px #0002;color:#111;animation:pop .3s}.card h4{margin:0;background:var(--d);color:#fff;padding:9px 12px;font-size:.88rem}.card h4 em{color:#d9f7e4;font-style:normal}
-.card dl{margin:0;padding:8px 12px;font-size:.82rem;display:grid;grid-template-columns:auto 1fr;gap:4px 10px}.card dt{color:#777}.card dd{margin:0;font-weight:600}
-.card .ok{background:#dcfce7;color:#166534;font-size:.78rem;padding:7px 12px;font-weight:600}
-.ph{display:flex;gap:4px}.photo{width:110px;height:82px;border-radius:8px;font-size:.68rem!important;background:linear-gradient(135deg,#374151,#111827);display:grid;place-items:center;color:#fff;font-size:.75rem;margin-bottom:3px}
-.qr{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;background:#f7f3ee;border-top:1px solid #0001;max-height:40%;overflow-y:auto}.qr:empty{display:none}
-.qr button{font:inherit;font-size:.84rem;background:#fff;color:var(--d);border:1.5px solid var(--r);padding:7px 12px;border-radius:20px;cursor:pointer;font-weight:600;animation:pop .25s}.qr button:hover{background:var(--r);color:#fff}.qr button.alt{border-color:#9ca3af;color:#555}
-.in{display:flex;gap:8px;padding:8px 10px 12px;background:#f7f3ee}.in input{flex:1;font:inherit;font-size:.9rem;border:0;border-radius:22px;padding:10px 14px;outline:none;color:#111}.in button{width:42px;height:42px;border-radius:50%;border:0;background:var(--r);color:#fff;font-size:1.1rem;cursor:pointer}
-.mob{display:none}
-@media(max-width:900px){.side{display:none}.stage{padding:0}.phone{width:100%;height:100vh;height:100dvh;max-height:none;border-radius:0;padding:0;box-shadow:none}.scr{border-radius:0}}
-.side h1 em{color:#e0719b}
+<!doctype html><html lang="es-MX"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><title>Demo asistente | Trébol Wapa (muestra)</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500&display=swap" rel="stylesheet"><style>
+:root{--brand:#1f4a36;--paper:#f4efe7;--ink:#1a1814;--mute:#6f685d;--line:#d8d0c2;--d:#1f4a36;--r:#1f4a36;--disp:'Instrument Serif',Georgia,serif;--sans:'Geist',system-ui,sans-serif}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--paper);color:var(--ink)}
+.c{font:500 9px/1 ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:#8a6a2f;border:1px solid #cdb68a;padding:2px 4px 1px;border-radius:2px;white-space:nowrap;vertical-align:middle}
+.bar{background:var(--ink);color:#cfc8bb;font:400 11.5px/1.3 ui-monospace,Menlo,monospace;letter-spacing:.04em;text-align:center;padding:8px 14px}.bar b{color:#fff;font-weight:500}.bar a{color:#fff}
+.stage{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(40px,7vw,120px);align-items:center;max-width:1240px;margin:auto;min-height:calc(100% - 33px);padding:40px clamp(20px,4vw,56px)}
+.side{font-family:var(--sans);max-width:520px}
+.kick{font:500 11px/1.4 ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.side h1{font-family:var(--disp);font-weight:400;font-size:clamp(42px,4.6vw,68px);line-height:1;letter-spacing:-.02em;margin:22px 0 22px}.side h1 em{font-style:italic;color:var(--brand)}
+.side>p{font-size:17px;line-height:1.6;color:var(--mute);margin:0 0 34px;max-width:40ch}.side>p b{color:var(--ink);font-weight:500}
+.ben{list-style:none;padding:0;margin:0 0 34px;border-top:1px solid var(--ink)}.ben li{display:grid;grid-template-columns:28px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.ben svg{width:22px;height:22px;color:var(--brand);margin-top:2px}.ben b{display:block;font-weight:500;font-size:15.5px}.ben span{font-size:14px;color:var(--mute)}
+.by{font-size:13px;color:var(--mute)}.by a{color:var(--ink)}
+.phone{width:380px;height:790px;max-height:calc(100vh - 80px);background:#0d0d0d;border-radius:58px;padding:11px;box-shadow:0 0 0 1px #2a2a2a,0 1px 0 2px #5a5a5a inset,0 50px 100px -30px rgba(20,18,14,.45),0 30px 60px -40px rgba(20,18,14,.5);flex:none;position:relative}
+.phone:before{content:"";position:absolute;top:22px;left:50%;transform:translateX(-50%);width:104px;height:30px;background:#000;border-radius:20px;z-index:5}
+.scr{height:100%;border-radius:47px;overflow:hidden;display:flex;flex-direction:column;background:#efeae2;position:relative}
+.sb{height:50px;flex:none;display:flex;justify-content:space-between;align-items:flex-end;padding:0 30px 6px 36px;background:#f6f5f3;font:600 15px/1 -apple-system,'SF Pro Text',sans-serif;color:#000}.sb i{display:flex;gap:5px;align-items:center}.sb svg{height:11px}
+.demo{display:none}
+.top{background:#f6f5f3;display:flex;align-items:center;gap:10px;padding:6px 12px 9px;border-bottom:1px solid #00000014;color:#111}
+.top .bk{color:#007aff;width:22px;height:22px;flex:none}
+.av{width:38px;height:38px;border-radius:50%;overflow:hidden;flex:none;background:var(--brand);color:#fff;display:grid;place-items:center;font:500 15px var(--disp)}.av img{width:100%;height:100%;object-fit:cover}
+.top b{font-size:15.5px;font-weight:600;display:flex;align-items:center;gap:4px;letter-spacing:-.01em}.top b svg{width:14px;height:14px;color:#25d366}.top small{font-size:12px;color:#8a8a8e!important;display:block}
+.top .rs{margin-left:auto;background:none;border:0;color:#007aff;font:inherit;font-size:13px;padding:6px 2px;cursor:pointer}
+.chat{flex:1;overflow-y:auto;padding:12px 12px 6px;background:#efeae2;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M10 10h4M40 30l3 3M20 45a2 2 0 1 0 0 .1' stroke='%23000' stroke-opacity='.035' fill='none'/%3E%3C/svg%3E");scrollbar-width:none}
+.chat::-webkit-scrollbar{display:none}
+.day{text-align:center;margin:2px 0 12px}.day span{background:#fff;color:#54656f;font-size:11.5px;padding:5px 12px;border-radius:8px;box-shadow:0 1px .5px #0b141a21}
+.enc{background:#fdf4c5;color:#54656f;font-size:11.5px;text-align:center;padding:7px 12px;border-radius:8px;margin:0 18px 12px;line-height:1.4}
+.m{max-width:82%;padding:6px 8px 4px 9px;border-radius:8px;margin:2px 0;font-size:14.6px;line-height:1.36;color:#111b21;box-shadow:0 1px .5px #0b141a21;animation:pop .22s ease;position:relative;word-wrap:break-word;width:fit-content}
+.m.b{background:#fff;border-top-left-radius:0;margin-top:6px}.m.u{background:#d9fdd3;margin-left:auto;border-top-right-radius:0;margin-top:6px}
+.t{float:right;font-size:11px;color:#667781;margin:6px 0 -3px 10px;line-height:1}.tk{color:#53bdeb;margin-left:3px;letter-spacing:-3px}
+@keyframes pop{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.typing{background:#fff;display:inline-flex;gap:4px;padding:11px 13px;border-radius:8px;border-top-left-radius:0;margin:6px 0 2px;box-shadow:0 1px .5px #0b141a21}.typing i{width:6px;height:6px;border-radius:50%;background:#8696a0;animation:bl 1s infinite}.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes bl{0%,60%,100%{opacity:.35}30%{opacity:1}}
+.cars{display:flex;gap:8px;overflow-x:auto;margin:6px -12px;padding:2px 12px 4px;scrollbar-width:none;scroll-snap-type:x mandatory}.car{flex:none;width:186px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 1px .5px #0b141a21;color:#111b21;animation:pop .3s;scroll-snap-align:start}
+.car img{display:block;width:100%;height:150px;object-fit:cover}.car svg{display:block;width:100%}.car div{padding:8px 10px 10px;font-size:12.5px;color:#54656f}.car b{display:block;font-size:14px;color:#111b21;font-weight:600}.car .p{color:#111b21;font-weight:500}
+.card{background:#fff;border-radius:8px;border-top-left-radius:0;overflow:hidden;max-width:86%;margin:6px 0 2px;box-shadow:0 1px .5px #0b141a21;color:#111b21;animation:pop .3s}.card h4{margin:0;padding:10px 12px 6px;font-size:14.5px;font-weight:600;border-left:3px solid var(--brand);margin:8px 8px 0;background:#f5f6f6;border-radius:6px 6px 0 0}.card h4 em{color:#667781;font-style:normal;font-weight:400;font-size:12.5px;display:block}
+.card dl{margin:0 8px;padding:6px 12px 10px;font-size:13px;display:grid;grid-template-columns:auto 1fr;gap:5px 12px;background:#f5f6f6;border-left:3px solid var(--brand);border-radius:0 0 6px 6px}.card dt{color:#667781}.card dd{margin:0;font-weight:500}
+.card .ok{color:#3b4a54;font-size:13px;padding:8px 12px 10px;line-height:1.4}
+.ph{display:flex;gap:4px}.photo{width:110px;height:82px;border-radius:6px;background:#d6d1c8;display:grid;place-items:center;color:#54656f;font-size:.68rem;margin-bottom:3px}
+.qr{display:flex;flex-direction:column;gap:1px;padding:0;background:#efeae2;max-height:42%;overflow-y:auto;scrollbar-width:none;padding:2px 12px 8px}.qr:empty{display:none}
+.qr button{font:inherit;font-size:14.5px;background:#fff;color:#027eb5;border:0;padding:10px 12px;cursor:pointer;font-weight:500;animation:pop .25s;text-align:center;box-shadow:0 1px .5px #0b141a21}
+.qr button:first-child{border-radius:8px 8px 0 0}.qr button:last-child{border-radius:0 0 8px 8px}.qr button:only-child{border-radius:8px}.qr button:hover{background:#f7f8f8}.qr button.alt{color:#667781}
+.in{display:flex;gap:8px;align-items:center;padding:7px 10px 26px;background:#f6f5f3;border-top:1px solid #00000010}.in input{flex:1;font:inherit;font-size:15px;border:1px solid #00000014;border-radius:20px;padding:8px 14px;outline:none;color:#111;background:#fff}
+.in button{width:36px;height:36px;border-radius:50%;border:0;background:#25d366;color:#fff;cursor:pointer;display:grid;place-items:center;flex:none}.in button svg{width:17px;height:17px}
+@media(max-width:900px){.bar{font-size:10.5px;padding:6px 10px}.side{display:none}.stage{display:block;padding:0;min-height:0}.phone{width:100%;height:calc(100vh - 30px);height:calc(100dvh - 30px);max-height:none;border-radius:0;padding:0;box-shadow:none;background:none}.phone:before,.sb{display:none}.scr{border-radius:0}.top{padding-top:10px}.in{padding-bottom:max(10px,env(safe-area-inset-bottom))}}
 </style></head><body>
+<div class="bar"><b>Demo interactiva</b> · preparada por Teacher Lalo · productos y precios de ejemplo · <a href="../">Ver la página</a></div>
 <div class="stage">
-<div class="side"><span class="kick">DEMO INTERACTIVA 🍀</span><h1>Tu asistente que <em>vende y toma medidas</em> 24/7 🐾</h1>
-<p>Así contestaría el WhatsApp de <b>Trébol Wapa</b>. Pruébalo 👉</p>
-<ul class="ben"><li><i>🕑</i><div><b>Responde 24/7</b><span>También de noche y en fin de semana.</span></div></li>
-<li><i>📏</i><div><b>Ayuda con la talla</b><span>Con medidas o con el peso del chihuahua.</span></div></li>
-<li><i>🛍️</i><div><b>Toma pedidos</b><span>Prenda, talla, color y envío.</span></div></li>
-<li><i>💁‍♀️</i><div><b>Pasa con la dueña</b><span>Con el pedido ya resumido.</span></div></li></ul>
-<p class="by">Demo ilustrativa preparada por Teacher Lalo. Productos y precios son de ejemplo.</p></div>
+<div class="side"><span class="kick">Trébol Wapa · Asistente de WhatsApp</span><h1>Una asistente que <em>vende y toma medidas</em> a cualquier hora.</h1>
+<p>Así contestaría el WhatsApp de <b>Trébol Wapa</b>: enseña la colección, calcula la talla con el peso o las medidas del perrito y deja el pedido listo. Pruébalo en el teléfono.</p>
+<ul class="ben"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Responde al momento</b><span>También de noche y en fin de semana.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 17 3l4 4L7 21z"/><path d="m7 13 2 2M10 10l2 2M13 7l2 2"/></svg><div><b>Calcula la talla</b><span>Con medidas en cm o solo con el peso.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><div><b>Toma el pedido completo</b><span>Prenda, talla, color y forma de entrega.</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><div><b>Te pasa la conversación</b><span>Con el pedido ya resumido, para que solo confirmes.</span></div></li></ul>
+<p class="by">Demo ilustrativa preparada por Teacher Lalo. <a href="../">Volver a la página</a></p></div>
 <div class="phone"><div class="scr">
-<div class="demo">Demo: así contestaría tu asistente por WhatsApp<small>Es un ejemplo: productos, precios y datos son ilustrativos</small></div>
-<div class="top"><div class="av" style="font-size:1.3rem;background:#fde2ec">🍀</div>
-<div><b>Trébol Wapa 🐾</b><small id="st" style="color:#d9f7e4">en línea</small></div><button class="rs" onclick="reset()">↺ Reiniciar</button></div>
+<div class="sb"><span>9:41</span><i><svg viewBox="0 0 18 11"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="6" rx="1"/><rect x="10" y="2.5" width="3" height="8.5" rx="1"/><rect x="15" y="0" width="3" height="11" rx="1"/></svg><svg viewBox="0 0 26 12"><rect x=".5" y=".5" width="22" height="11" rx="3" fill="none" stroke="#000" stroke-opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.8"/><rect x="23.5" y="4" width="1.6" height="4" rx=".8" fill-opacity=".4"/></svg></i></div>
+<div class="demo"></div>
+<div class="top"><svg class="bk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m15 5-7 7 7 7"/></svg><div class="av"><img src="../img/p-verde-sm.webp" alt=""></div>
+<div><b>Trébol Wapa <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 1.8 3-.2.9 2.9 2.5 1.7-1 2.8 1 2.8-2.5 1.7-.9 2.9-3-.2L12 22l-2.4-1.8-3 .2-.9-2.9L3.2 15.8l1-2.8-1-2.8 2.5-1.7.9-2.9 3 .2z"/><path d="m8 12 3 3 5-6" stroke="#fff" stroke-width="2" fill="none"/></svg></b><small id="st">en línea</small></div><button class="rs" onclick="reset()">Reiniciar</button></div>
 <div class="chat" id="chat"></div><div class="qr" id="qr"></div>
-<form class="in" id="f"><input id="txt" placeholder="Escribe un mensaje…" autocomplete="off"><button aria-label="Enviar">➤</button></form>
+<form class="in" id="f"><input id="txt" placeholder="Mensaje" autocomplete="off"><button aria-label="Enviar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.4 20.4 21 12 3.4 3.6 3.4 10l12.6 2-12.6 2z"/></svg></button></form>
 </div></div></div>
 <script>
 const C='<span class="c">[confirmar]</span>',FAST=location.search.includes('fast');
@@ -64,28 +74,28 @@ function opts(list,ex){qr.innerHTML='';expect=ex||null;list.forEach(o=>{const[l,
 function pick(l,fn){if(busy)return;qr.innerHTML='';add(esc(l),'u');run(()=>(fn||expect)(l))}
 function run(f){busy=true;q=q.then(f).catch(e=>console.error(e)).finally(()=>busy=false)}
 const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const END=[['🏠 Volver al menú',()=>menu(true)],['↺ Reiniciar demo',()=>reset(),1]];
+const END=[['Volver al menú',()=>menu(true)],['Reiniciar demo',()=>reset(),1]];
 const folio=p=>p+'-'+Math.floor(1000+Math.random()*9000);
 function summary(title,rows,ok){return{html:`<div class="card"><h4>${title}</h4><dl>${rows.map(([k,v])=>`<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl><div class="ok">${ok}</div></div>`}}
 const PE='<span class="c">precio ejemplo</span>';
-const PROD=[['🧶','Suéter Trébol tejido','$249','#cdeedb'],['🧥','Sudadera con gorrito','$299','#fde2ec'],['👗','Vestido de flores','$279','#fff1c9'],['🌧️','Impermeable amarillo','$329','#dbeafe'],['🎀','Moño + collar','$129','#ede4fb']];
+const PROD=[['p-verde','Suéter Bosque','$249'],['p-orejitas','Sudadera Orejitas','$319'],['p-abrigo','Abrigo Arcoíris','$349'],['p-roja','Sudadera Cereza','$299'],['p-bandana','Paliacate rojo','$129']];
 const TALLAS=['XXS','XS','S','M'],COLORES=['Verde trébol','Rosa','Beige','Lila'];
-const MENU=()=>[['👕 1. Ver catálogo',catalogo],['📏 2. Ayuda con la talla',talla],['🛍️ 3. Hacer pedido',pedido],['💳 4. Pagos y envíos',pagos],['💁‍♀️ 5. Hablar con la dueña',duena]];
-async function menu(back){S={};await bot(back?'¿Te ayudo con algo más? 🐾':'¿En qué te ayudo? Toca una opción o escríbeme 👇');opts(MENU())}
-async function start(){chat.innerHTML='<div class="day"><span>Hoy</span></div>';await bot('¡Hola! 🍀 Bienvenid@ a <b>Trébol Wapa</b>, ropita para chihuahuas 🐶💚','Soy la asistente de la tienda. Te enseño el catálogo, te ayudo con la talla y tomo tu pedido.');await menu()}
+const MENU=()=>[['1. Ver catálogo',catalogo],['2. Ayuda con la talla',talla],['3. Hacer pedido',pedido],['4. Pagos y envíos',pagos],['5. Hablar con la dueña',duena]];
+async function menu(back){S={};await bot(back?'¿Te ayudo con algo más?':'¿En qué te ayudo? Toca una opción o escríbeme');opts(MENU())}
+async function start(){chat.innerHTML='<div class="day"><span>Hoy</span></div><div class="enc">Los mensajes son de ejemplo: esta es una demostración de cómo respondería el asistente.</div>';await bot('¡Hola! Bienvenid@ a <b>Trébol Wapa</b>, ropita para chihuahuas','Soy la asistente de la tienda. Te enseño el catálogo, te ayudo con la talla y tomo tu pedido.');await menu()}
 function reset(){qr.innerHTML='';run(start)}
-async function catalogo(){await bot('Mira lo que tenemos 😍 (desliza)',{html:'<div class="cars">'+PROD.map(([e,n,p,c])=>'<div class="car"><div style="background:'+c+';font-size:3.2rem;text-align:center;padding:18px 0">'+e+'</div><div><b>'+n+'</b><span class="p">'+p+'</span> '+PE+'<br>Tallas XXS a M</div></div>').join('')+'</div>'});opts([['🛍️ Quiero pedir',pedido],['📏 ¿Qué talla es?',talla],...END])}
+async function catalogo(){await bot('Mira lo que tenemos (desliza)',{html:'<div class="cars">'+PROD.map(([e,n,p])=>'<div class="car"><img src="../img/'+e+'-sm.webp" alt="'+n+' para chihuahua"><div><b>'+n+'</b><span class="p">'+p+' MXN</span> '+PE+'<br>Tallas XXS a M</div></div>').join('')+'</div>'});opts([['Quiero pedir',pedido],['¿Qué talla es?',talla],...END])}
 function sug(cuello,pecho,espalda){if(pecho<=26)return'XXS';if(pecho<=32)return'XS';if(pecho<=38)return'S';return'M'}
-async function talla(){await bot('¡Te ayudo! 📏 ¿Cómo prefieres?');opts([['📐 Tengo sus medidas',medidas],['⚖️ Solo sé su peso',peso]])}
-async function medidas(){await bot('Mide con cinta suave 🐾<br>• <b>Cuello</b>: donde va el collar<br>• <b>Pecho</b>: la parte más ancha, detrás de las patitas<br>• <b>Espalda</b>: del cuello al inicio de la cola','Escríbeme las 3 medidas en cm, así: <b>20, 30, 25</b>');qr.innerHTML='';expect=async v=>{const n=(v.match(/\d+(\.\d+)?/g)||[]).map(Number);if(n.length<2){await bot('Mmm, no las entendí 🙈 Escríbelas así: 20, 30, 25');return medidas()}const t=sug(n[0],n[1],n[2]);S.talla=t;await bot('Con esas medidas te recomiendo talla <b>'+t+'</b> ✅','Si queda entre dos tallas, mejor la más grande para que esté cómod@. (Guía de referencia)');opts([['🛍️ Pedir en talla '+t,pedido],...END])}}
-async function peso(){await bot('¿Cuánto pesa tu chihuahua?');opts(['Menos de 1.5 kg','1.5 a 2.5 kg','2.5 a 3.5 kg','Más de 3.5 kg'],async v=>{const t={'Menos de 1.5 kg':'XXS','1.5 a 2.5 kg':'XS','2.5 a 3.5 kg':'S','Más de 3.5 kg':'M'}[v];S.talla=t;await bot('Te sugiero talla <b>'+t+'</b> 🐶 Es una guía: si puedes, mándame su pecho en cm para confirmar.');opts([['🛍️ Pedir en talla '+t,pedido],['📐 Mejor doy medidas',medidas],...END])})}
-async function pedido(){const t0=S.talla;await bot('¡Va! 🛍️ ¿Qué prenda quieres?');opts(PROD.map(p=>p[1]),async pr=>{S.pr=pr;const nextT=async t=>{S.talla=t;await bot('¿De qué color?');opts(COLORES,async c=>{S.col=c;await bot('¿Cómo lo quieres recibir?');opts(['📦 Envío a domicilio','🤝 Entrega en punto acordado'],async e=>{S.env=e;const p=PROD.find(x=>x[1]==S.pr);
- await bot('¡Listo! 💚 Tu pedido:',summary('🍀 Pedido · <em>'+folio('TW')+'</em>',[['Prenda',S.pr],['Talla',S.talla],['Color',S.col],['Entrega',S.env],['Precio',p[2]+' (ejemplo)']],'La dueña te confirma disponibilidad, costo de envío y datos de pago por aquí.'));opts([['💳 Formas de pago',pagos],...END])})})};
- if(t0){await bot('¿La quieres en talla '+t0+'?');opts([['Sí, '+t0,()=>nextT(t0)],['Otra talla',async()=>{await bot('¿Qué talla?');opts(TALLAS,nextT)}]])}else{await bot('¿Qué talla? (si no sabes, elige "No sé")');opts([...TALLAS,['No sé 🤔',talla]],nextT)}})}
-async function pagos(){await bot({html:'<div class="card"><h4>💳 Pagos y envíos</h4><dl><dt>Pago</dt><dd>Transferencia, depósito en OXXO '+C+'</dd><dt>Envíos</dt><dd>A todo México '+C+'</dd><dt>Costo</dt><dd>$ '+C+'</dd><dt>Tiempo</dt><dd>3 a 5 días hábiles '+C+'</dd><dt>Entregas</dt><dd>Punto acordado en la ciudad '+C+'</dd></dl></div>'},'¿Algo más?');opts([['🛍️ Hacer pedido',pedido],...END])}
-async function duena(){await bot('¡Claro! 💁‍♀️ Cuéntame en qué te ayuda la dueña (escríbelo abajo)');qr.innerHTML='';expect=async t=>{await bot('¡Gracias! Ya se lo pasé 🙌',summary('💁‍♀️ Mensaje para la dueña · <em>'+folio('D')+'</em>',[['Mensaje',t],['Estado','Enviado']],'Te contesta personalmente en cuanto pueda.'));opts(END)}}
+async function talla(){await bot('¡Te ayudo! ¿Cómo prefieres?');opts([['Tengo sus medidas',medidas],['Solo sé su peso',peso]])}
+async function medidas(){await bot('Mide con cinta suave<br>• <b>Cuello</b>: donde va el collar<br>• <b>Pecho</b>: la parte más ancha, detrás de las patitas<br>• <b>Espalda</b>: del cuello al inicio de la cola','Escríbeme las 3 medidas en cm, así: <b>20, 30, 25</b>');qr.innerHTML='';expect=async v=>{const n=(v.match(/\d+(\.\d+)?/g)||[]).map(Number);if(n.length<2){await bot('Mmm, no las entendí. Escríbelas así: 20, 30, 25');return medidas()}const t=sug(n[0],n[1],n[2]);S.talla=t;await bot('Con esas medidas te recomiendo talla <b>'+t+'</b>','Si queda entre dos tallas, mejor la más grande para que esté cómod@. (Guía de referencia)');opts([['Pedir en talla '+t,pedido],...END])}}
+async function peso(){await bot('¿Cuánto pesa tu chihuahua?');opts(['Menos de 1.5 kg','1.5 a 2.5 kg','2.5 a 3.5 kg','Más de 3.5 kg'],async v=>{const t={'Menos de 1.5 kg':'XXS','1.5 a 2.5 kg':'XS','2.5 a 3.5 kg':'S','Más de 3.5 kg':'M'}[v];S.talla=t;await bot('Te sugiero talla <b>'+t+'</b> Es una guía: si puedes, mándame su pecho en cm para confirmar.');opts([['Pedir en talla '+t,pedido],['Mejor doy medidas',medidas],...END])})}
+async function pedido(){const t0=S.talla;await bot('¡Va! ¿Qué prenda quieres?');opts(PROD.map(p=>p[1]),async pr=>{S.pr=pr;const nextT=async t=>{S.talla=t;await bot('¿De qué color?');opts(COLORES,async c=>{S.col=c;await bot('¿Cómo lo quieres recibir?');opts(['Envío a domicilio','Entrega en punto acordado'],async e=>{S.env=e;const p=PROD.find(x=>x[1]==S.pr);
+ await bot('¡Listo! Tu pedido:',summary('Pedido · <em>'+folio('TW')+'</em>',[['Prenda',S.pr],['Talla',S.talla],['Color',S.col],['Entrega',S.env],['Precio',p[2]+' (ejemplo)']],'La dueña te confirma disponibilidad, costo de envío y datos de pago por aquí.'));opts([['Formas de pago',pagos],...END])})})};
+ if(t0){await bot('¿La quieres en talla '+t0+'?');opts([['Sí, '+t0,()=>nextT(t0)],['Otra talla',async()=>{await bot('¿Qué talla?');opts(TALLAS,nextT)}]])}else{await bot('¿Qué talla? (si no sabes, elige "No sé")');opts([...TALLAS,['No sé',talla]],nextT)}})}
+async function pagos(){await bot({html:'<div class="card"><h4>Pagos y envíos</h4><dl><dt>Pago</dt><dd>Transferencia, depósito en OXXO '+C+'</dd><dt>Envíos</dt><dd>A todo México '+C+'</dd><dt>Costo</dt><dd>$ '+C+'</dd><dt>Tiempo</dt><dd>3 a 5 días hábiles '+C+'</dd><dt>Entregas</dt><dd>Punto acordado en la ciudad '+C+'</dd></dl></div>'},'¿Algo más?');opts([['Hacer pedido',pedido],...END])}
+async function duena(){await bot('¡Claro! Cuéntame en qué te ayuda la dueña (escríbelo abajo)');qr.innerHTML='';expect=async t=>{await bot('¡Gracias! Ya se lo pasé',summary('Mensaje para la dueña · <em>'+folio('D')+'</em>',[['Mensaje',t],['Estado','Enviado']],'Te contesta personalmente en cuanto pueda.'));opts(END)}}
 const KW=[[/cat[aá]log|ropa|su[eé]ter|sudadera|vestido|impermeable|ver/i,catalogo],[/talla|medid|peso|tama/i,talla],[/pedi|comprar|quiero|ordenar/i,pedido],[/pago|pagar|env[ií]o|transfer/i,pagos],[/due[nñ]a|persona|humano|hablar/i,duena],[/^1$/,catalogo],[/^2$/,talla],[/^3$/,pedido],[/^4$/,pagos],[/^5$/,duena],[/men[uú]|inicio|hola|buen/i,()=>menu(true)]];
 document.getElementById('f').onsubmit=e=>{e.preventDefault();const i=document.getElementById('txt'),v=i.value.trim();if(!v||busy)return;i.value='';qr.innerHTML='';add(esc(v),'u');
- run(async()=>{if(expect){const f=expect;expect=null;return f(v)}const k=KW.find(([r])=>r.test(v));if(k)return k[1]();await bot('Perdón, no te entendí bien 🙈 ¿Me ayudas eligiendo una opción?');opts(MENU())})};
+ run(async()=>{if(expect){const f=expect;expect=null;return f(v)}const k=KW.find(([r])=>r.test(v));if(k)return k[1]();await bot('Perdón, no te entendí bien. ¿Me ayudas eligiendo una opción?');opts(MENU())})};
 reset();
 </script></body></html>
