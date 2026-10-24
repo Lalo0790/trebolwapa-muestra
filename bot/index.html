@@ -1,0 +1,90 @@
+<!doctype html><html lang="es-MX"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><title>Demo asistente | Trébol Wapa (muestra)</title><style>
+:root{--d:#2f8f5b;--r:#3fae6e;--l:#f4f5f7;--bg:#fdf2f6}*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;font-family:system-ui,Segoe UI,Roboto,sans-serif;background:radial-gradient(circle at 20% 10%,#e3f6ea,transparent 50%),var(--bg);color:#2d2a32}
+.c{background:#ffe066;color:#5c4400;font-size:.68rem;font-weight:700;padding:1px 5px;border-radius:4px;white-space:nowrap}
+.stage{display:flex;align-items:center;justify-content:center;gap:56px;min-height:100%;padding:24px}
+.side{max-width:400px}.side h1{font-size:2.6rem;line-height:1.08;margin:10px 0 14px}.side h1 em{color:var(--r);font-style:normal}.side p{opacity:.8}
+.kick{display:inline-block;background:#3fae6e22;color:#2f8f5b;border:1px solid #3fae6e55;padding:5px 12px;border-radius:30px;font-size:.8rem;font-weight:700}
+.ben{list-style:none;padding:0;margin:22px 0}.ben li{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #f3d3e0;border-radius:14px;padding:11px 14px;margin-bottom:9px}.ben i{font-style:normal;font-size:1.3rem;width:38px;height:38px;display:grid;place-items:center;background:var(--r);border-radius:10px;flex:none}.ben b{display:block}.ben span{font-size:.85rem;opacity:.7}
+.by{font-size:.8rem;opacity:.55}
+.phone{width:390px;height:800px;max-height:calc(100vh - 48px);background:#000;border-radius:46px;padding:12px;box-shadow:0 30px 80px #000a,0 0 0 2px #333 inset;flex:none}
+.scr{height:100%;border-radius:36px;overflow:hidden;display:flex;flex-direction:column;background:#efe9e1}
+.demo{background:#ffe066;color:#3d2e00;font-size:.75rem;font-weight:700;text-align:center;padding:6px 10px;line-height:1.3}.demo small{display:block;font-weight:500;opacity:.8}
+.top{background:var(--d);display:flex;align-items:center;gap:10px;padding:10px 12px}
+.av{width:40px;height:40px;border-radius:50%;background:var(--r);display:grid;place-items:center;flex:none}
+.top b{font-size:.98rem;display:block}.top small{font-size:.75rem;color:#86efac}.top .rs{margin-left:auto;background:#ffffff1a;border:0;color:#fff;font:inherit;font-size:.72rem;padding:6px 10px;border-radius:20px;cursor:pointer}
+.chat{flex:1;overflow-y:auto;padding:14px 10px;background-color:#ece5dc;background-image:radial-gradient(#0000000a 1px,transparent 1px);background-size:14px 14px}
+.day{text-align:center;margin:0 0 10px}.day span{background:#fff;color:#555;font-size:.7rem;padding:4px 10px;border-radius:8px;box-shadow:0 1px 1px #0001}
+.m{max-width:84%;padding:7px 10px 5px;border-radius:12px;margin:4px 0;font-size:.9rem;line-height:1.4;color:#111;box-shadow:0 1px 1px #0002;animation:pop .25s ease;position:relative;word-wrap:break-word}
+.m.b{background:#fff;border-top-left-radius:3px}.m.u{background:#d1fae5;margin-left:auto;border-top-right-radius:3px}
+.t{display:block;text-align:right;font-size:.64rem;color:#777;margin-top:2px}.tk{color:#3b82f6;margin-left:3px}
+@keyframes pop{from{opacity:0;transform:translateY(6px) scale(.97)}to{opacity:1;transform:none}}
+.typing{background:#fff;display:inline-flex;gap:4px;padding:12px 14px;border-radius:12px;border-top-left-radius:3px;margin:4px 0}.typing i{width:7px;height:7px;border-radius:50%;background:#999;animation:bl 1s infinite}.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes bl{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+.cars{display:flex;gap:8px;overflow-x:auto;margin:6px 0;padding-bottom:4px}.car{flex:none;width:200px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 2px #0002;color:#111;animation:pop .3s}
+.car svg{display:block;width:100%}.car div{padding:8px 10px;font-size:.8rem}.car b{display:block;font-size:.9rem}.car .p{color:var(--r);font-weight:800}
+.card{background:#fff;border-radius:12px;overflow:hidden;max-width:88%;margin:6px 0;box-shadow:0 1px 2px #0002;color:#111;animation:pop .3s}.card h4{margin:0;background:var(--d);color:#fff;padding:9px 12px;font-size:.88rem}.card h4 em{color:#d9f7e4;font-style:normal}
+.card dl{margin:0;padding:8px 12px;font-size:.82rem;display:grid;grid-template-columns:auto 1fr;gap:4px 10px}.card dt{color:#777}.card dd{margin:0;font-weight:600}
+.card .ok{background:#dcfce7;color:#166534;font-size:.78rem;padding:7px 12px;font-weight:600}
+.ph{display:flex;gap:4px}.photo{width:110px;height:82px;border-radius:8px;font-size:.68rem!important;background:linear-gradient(135deg,#374151,#111827);display:grid;place-items:center;color:#fff;font-size:.75rem;margin-bottom:3px}
+.qr{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;background:#f7f3ee;border-top:1px solid #0001;max-height:40%;overflow-y:auto}.qr:empty{display:none}
+.qr button{font:inherit;font-size:.84rem;background:#fff;color:var(--d);border:1.5px solid var(--r);padding:7px 12px;border-radius:20px;cursor:pointer;font-weight:600;animation:pop .25s}.qr button:hover{background:var(--r);color:#fff}.qr button.alt{border-color:#9ca3af;color:#555}
+.in{display:flex;gap:8px;padding:8px 10px 12px;background:#f7f3ee}.in input{flex:1;font:inherit;font-size:.9rem;border:0;border-radius:22px;padding:10px 14px;outline:none;color:#111}.in button{width:42px;height:42px;border-radius:50%;border:0;background:var(--r);color:#fff;font-size:1.1rem;cursor:pointer}
+.mob{display:none}
+@media(max-width:900px){.side{display:none}.stage{padding:0}.phone{width:100%;height:100vh;height:100dvh;max-height:none;border-radius:0;padding:0;box-shadow:none}.scr{border-radius:0}}
+.side h1 em{color:#e0719b}
+</style></head><body>
+<div class="stage">
+<div class="side"><span class="kick">DEMO INTERACTIVA 🍀</span><h1>Tu asistente que <em>vende y toma medidas</em> 24/7 🐾</h1>
+<p>Así contestaría el WhatsApp de <b>Trébol Wapa</b>. Pruébalo 👉</p>
+<ul class="ben"><li><i>🕑</i><div><b>Responde 24/7</b><span>También de noche y en fin de semana.</span></div></li>
+<li><i>📏</i><div><b>Ayuda con la talla</b><span>Con medidas o con el peso del chihuahua.</span></div></li>
+<li><i>🛍️</i><div><b>Toma pedidos</b><span>Prenda, talla, color y envío.</span></div></li>
+<li><i>💁‍♀️</i><div><b>Pasa con la dueña</b><span>Con el pedido ya resumido.</span></div></li></ul>
+<p class="by">Demo ilustrativa preparada por Teacher Lalo. Productos y precios son de ejemplo.</p></div>
+<div class="phone"><div class="scr">
+<div class="demo">Demo: así contestaría tu asistente por WhatsApp<small>Es un ejemplo: productos, precios y datos son ilustrativos</small></div>
+<div class="top"><div class="av" style="font-size:1.3rem;background:#fde2ec">🍀</div>
+<div><b>Trébol Wapa 🐾</b><small id="st" style="color:#d9f7e4">en línea</small></div><button class="rs" onclick="reset()">↺ Reiniciar</button></div>
+<div class="chat" id="chat"></div><div class="qr" id="qr"></div>
+<form class="in" id="f"><input id="txt" placeholder="Escribe un mensaje…" autocomplete="off"><button aria-label="Enviar">➤</button></form>
+</div></div></div>
+<script>
+const C='<span class="c">[confirmar]</span>',FAST=location.search.includes('fast');
+const chat=document.getElementById('chat'),qr=document.getElementById('qr'),st=document.getElementById('st');
+let S={},busy=false,expect=null,q=Promise.resolve();
+const now=()=>new Date().toLocaleTimeString('es-MX',{hour:'numeric',minute:'2-digit'});
+const sleep=ms=>new Promise(r=>setTimeout(r,FAST?5:ms));
+const down=()=>chat.scrollTop=chat.scrollHeight;
+function add(html,cls){const d=document.createElement('div');d.className='m '+cls;d.innerHTML=html+`<span class="t">${now()}${cls=='u'?'<span class="tk">✓✓</span>':''}</span>`;chat.appendChild(d);down();return d}
+function raw(html){const d=document.createElement('div');d.innerHTML=html;chat.appendChild(d.firstElementChild);down()}
+async function bot(...ms){for(const m of ms){const t=document.createElement('div');t.className='typing';t.innerHTML='<i></i><i></i><i></i>';chat.appendChild(t);st.textContent='escribiendo…';down();
+ await sleep(Math.min(500+(typeof m=='string'?m.length*12:400),1600));t.remove();st.textContent='en línea';typeof m=='string'?add(m,'b'):raw(m.html);await sleep(250)}}
+function opts(list,ex){qr.innerHTML='';expect=ex||null;list.forEach(o=>{const[l,fn,alt]=Array.isArray(o)?o:[o,null];const b=document.createElement('button');b.type='button';b.textContent=l;if(alt)b.className='alt';b.onclick=()=>pick(l,fn);qr.appendChild(b)});down()}
+function pick(l,fn){if(busy)return;qr.innerHTML='';add(esc(l),'u');run(()=>(fn||expect)(l))}
+function run(f){busy=true;q=q.then(f).catch(e=>console.error(e)).finally(()=>busy=false)}
+const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const END=[['🏠 Volver al menú',()=>menu(true)],['↺ Reiniciar demo',()=>reset(),1]];
+const folio=p=>p+'-'+Math.floor(1000+Math.random()*9000);
+function summary(title,rows,ok){return{html:`<div class="card"><h4>${title}</h4><dl>${rows.map(([k,v])=>`<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl><div class="ok">${ok}</div></div>`}}
+const PE='<span class="c">precio ejemplo</span>';
+const PROD=[['🧶','Suéter Trébol tejido','$249','#cdeedb'],['🧥','Sudadera con gorrito','$299','#fde2ec'],['👗','Vestido de flores','$279','#fff1c9'],['🌧️','Impermeable amarillo','$329','#dbeafe'],['🎀','Moño + collar','$129','#ede4fb']];
+const TALLAS=['XXS','XS','S','M'],COLORES=['Verde trébol','Rosa','Beige','Lila'];
+const MENU=()=>[['👕 1. Ver catálogo',catalogo],['📏 2. Ayuda con la talla',talla],['🛍️ 3. Hacer pedido',pedido],['💳 4. Pagos y envíos',pagos],['💁‍♀️ 5. Hablar con la dueña',duena]];
+async function menu(back){S={};await bot(back?'¿Te ayudo con algo más? 🐾':'¿En qué te ayudo? Toca una opción o escríbeme 👇');opts(MENU())}
+async function start(){chat.innerHTML='<div class="day"><span>Hoy</span></div>';await bot('¡Hola! 🍀 Bienvenid@ a <b>Trébol Wapa</b>, ropita para chihuahuas 🐶💚','Soy la asistente de la tienda. Te enseño el catálogo, te ayudo con la talla y tomo tu pedido.');await menu()}
+function reset(){qr.innerHTML='';run(start)}
+async function catalogo(){await bot('Mira lo que tenemos 😍 (desliza)',{html:'<div class="cars">'+PROD.map(([e,n,p,c])=>'<div class="car"><div style="background:'+c+';font-size:3.2rem;text-align:center;padding:18px 0">'+e+'</div><div><b>'+n+'</b><span class="p">'+p+'</span> '+PE+'<br>Tallas XXS a M</div></div>').join('')+'</div>'});opts([['🛍️ Quiero pedir',pedido],['📏 ¿Qué talla es?',talla],...END])}
+function sug(cuello,pecho,espalda){if(pecho<=26)return'XXS';if(pecho<=32)return'XS';if(pecho<=38)return'S';return'M'}
+async function talla(){await bot('¡Te ayudo! 📏 ¿Cómo prefieres?');opts([['📐 Tengo sus medidas',medidas],['⚖️ Solo sé su peso',peso]])}
+async function medidas(){await bot('Mide con cinta suave 🐾<br>• <b>Cuello</b>: donde va el collar<br>• <b>Pecho</b>: la parte más ancha, detrás de las patitas<br>• <b>Espalda</b>: del cuello al inicio de la cola','Escríbeme las 3 medidas en cm, así: <b>20, 30, 25</b>');qr.innerHTML='';expect=async v=>{const n=(v.match(/\d+(\.\d+)?/g)||[]).map(Number);if(n.length<2){await bot('Mmm, no las entendí 🙈 Escríbelas así: 20, 30, 25');return medidas()}const t=sug(n[0],n[1],n[2]);S.talla=t;await bot('Con esas medidas te recomiendo talla <b>'+t+'</b> ✅','Si queda entre dos tallas, mejor la más grande para que esté cómod@. (Guía de referencia)');opts([['🛍️ Pedir en talla '+t,pedido],...END])}}
+async function peso(){await bot('¿Cuánto pesa tu chihuahua?');opts(['Menos de 1.5 kg','1.5 a 2.5 kg','2.5 a 3.5 kg','Más de 3.5 kg'],async v=>{const t={'Menos de 1.5 kg':'XXS','1.5 a 2.5 kg':'XS','2.5 a 3.5 kg':'S','Más de 3.5 kg':'M'}[v];S.talla=t;await bot('Te sugiero talla <b>'+t+'</b> 🐶 Es una guía: si puedes, mándame su pecho en cm para confirmar.');opts([['🛍️ Pedir en talla '+t,pedido],['📐 Mejor doy medidas',medidas],...END])})}
+async function pedido(){const t0=S.talla;await bot('¡Va! 🛍️ ¿Qué prenda quieres?');opts(PROD.map(p=>p[1]),async pr=>{S.pr=pr;const nextT=async t=>{S.talla=t;await bot('¿De qué color?');opts(COLORES,async c=>{S.col=c;await bot('¿Cómo lo quieres recibir?');opts(['📦 Envío a domicilio','🤝 Entrega en punto acordado'],async e=>{S.env=e;const p=PROD.find(x=>x[1]==S.pr);
+ await bot('¡Listo! 💚 Tu pedido:',summary('🍀 Pedido · <em>'+folio('TW')+'</em>',[['Prenda',S.pr],['Talla',S.talla],['Color',S.col],['Entrega',S.env],['Precio',p[2]+' (ejemplo)']],'La dueña te confirma disponibilidad, costo de envío y datos de pago por aquí.'));opts([['💳 Formas de pago',pagos],...END])})})};
+ if(t0){await bot('¿La quieres en talla '+t0+'?');opts([['Sí, '+t0,()=>nextT(t0)],['Otra talla',async()=>{await bot('¿Qué talla?');opts(TALLAS,nextT)}]])}else{await bot('¿Qué talla? (si no sabes, elige "No sé")');opts([...TALLAS,['No sé 🤔',talla]],nextT)}})}
+async function pagos(){await bot({html:'<div class="card"><h4>💳 Pagos y envíos</h4><dl><dt>Pago</dt><dd>Transferencia, depósito en OXXO '+C+'</dd><dt>Envíos</dt><dd>A todo México '+C+'</dd><dt>Costo</dt><dd>$ '+C+'</dd><dt>Tiempo</dt><dd>3 a 5 días hábiles '+C+'</dd><dt>Entregas</dt><dd>Punto acordado en la ciudad '+C+'</dd></dl></div>'},'¿Algo más?');opts([['🛍️ Hacer pedido',pedido],...END])}
+async function duena(){await bot('¡Claro! 💁‍♀️ Cuéntame en qué te ayuda la dueña (escríbelo abajo)');qr.innerHTML='';expect=async t=>{await bot('¡Gracias! Ya se lo pasé 🙌',summary('💁‍♀️ Mensaje para la dueña · <em>'+folio('D')+'</em>',[['Mensaje',t],['Estado','Enviado']],'Te contesta personalmente en cuanto pueda.'));opts(END)}}
+const KW=[[/cat[aá]log|ropa|su[eé]ter|sudadera|vestido|impermeable|ver/i,catalogo],[/talla|medid|peso|tama/i,talla],[/pedi|comprar|quiero|ordenar/i,pedido],[/pago|pagar|env[ií]o|transfer/i,pagos],[/due[nñ]a|persona|humano|hablar/i,duena],[/^1$/,catalogo],[/^2$/,talla],[/^3$/,pedido],[/^4$/,pagos],[/^5$/,duena],[/men[uú]|inicio|hola|buen/i,()=>menu(true)]];
+document.getElementById('f').onsubmit=e=>{e.preventDefault();const i=document.getElementById('txt'),v=i.value.trim();if(!v||busy)return;i.value='';qr.innerHTML='';add(esc(v),'u');
+ run(async()=>{if(expect){const f=expect;expect=null;return f(v)}const k=KW.find(([r])=>r.test(v));if(k)return k[1]();await bot('Perdón, no te entendí bien 🙈 ¿Me ayudas eligiendo una opción?');opts(MENU())})};
+reset();
