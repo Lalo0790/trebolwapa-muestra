@@ -88,3 +88,4 @@ const KW=[[/cat[aá]log|ropa|su[eé]ter|sudadera|vestido|impermeable|ver/i,catal
 document.getElementById('f').onsubmit=e=>{e.preventDefault();const i=document.getElementById('txt'),v=i.value.trim();if(!v||busy)return;i.value='';qr.innerHTML='';add(esc(v),'u');
  run(async()=>{if(expect){const f=expect;expect=null;return f(v)}const k=KW.find(([r])=>r.test(v));if(k)return k[1]();await bot('Perdón, no te entendí bien 🙈 ¿Me ayudas eligiendo una opción?');opts(MENU())})};
 reset();
+</script></body></html>
